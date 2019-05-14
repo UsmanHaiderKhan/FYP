@@ -4,11 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/assets/fontawesome-free-5.6.1-web/css/all.min.css" rel="stylesheet" />
     <link href="~/Content/assets/Bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/assets/font/flaticon.css" rel="stylesheet" />
     <link href="~/Content/assets/Bootstrap4/css/owl.carousel.min.css" rel="stylesheet" />
     <link href="~/Content/assets/Bootstrap4/css/owl.theme.default.min.css" rel="stylesheet" />
     <link href="~/Content/assets/Bootstrap4/css/styles.css" rel="stylesheet" />
+    <style>
+
+
+
+
+
+
+
+        .white-text {
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
     <section id="top-nav">
@@ -72,9 +85,54 @@
     </nav>
     <div>
         @RenderBody()
-        <div class="mt-60 p-4" style="background: #000000;">
-            <h4 class="text-center text-white">@DateTime.Now</h4>
-        </div>
+        <!-- Footer -->
+        <footer class="page-footer font-small dark " style="background: cadetblue">
+            <!-- Footer Elements -->
+            <div class="container">
+                <!-- Grid row-->
+                <div class="row">
+                    <!-- Grid column -->
+                    <div class="col-md-12 py-5">
+                        <div class="mb-5 text-center">
+                            <!-- Facebook -->
+                            <a class="fb-ic">
+                                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <!-- Twitter -->
+                            <a class="tw-ic">
+                                <i class="fab fa-twitter fa-lg  mr-md-5 mr-3 fa-2x" style="color: #ffffff"> </i>
+                            </a>
+                            <!-- Google +-->
+                            <a class="gplus-ic">
+                                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <!--Linkedin -->
+                            <a class="li-ic">
+                                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <!--Instagram-->
+                            <a class="ins-ic">
+                                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                            </a>
+                            <!--Pinterest-->
+                            <a class="pin-ic">
+                                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row-->
+            </div>
+            <!-- Footer Elements -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3" style="background: darkcyan;color: #ffffff">
+                © 2018 Copyright:
+                <a href="@Url.Action("Index","Home")" style="color: #ffffff"> FYP Management System</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
     </div>
     <script src="~/Content/assets/Bootstrap4/js/jquery.slim.min.js"></script>
     <script src="~/Content/assets/Bootstrap4/js/bootstrap.min.js"></script>

@@ -108,7 +108,7 @@ $(document).ready(function () {
 $(function () {
     $('.owl-carousel').owlCarousel({
         loop: true,
-        //autoplay: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
         margin: 20,
         dots: false,
         responsiveClass: true,
