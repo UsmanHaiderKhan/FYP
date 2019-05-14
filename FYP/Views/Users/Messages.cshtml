@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "Messages";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+
+
+
+
+
+
+
+
+
+
+
+
+    .user-list {
+        height: 300px;
+        overflow-y: auto;
+        border-radius: 0.6rem;
+    }
+
+    .convo {
+        height: 250px;
+        overflow-y: auto;
+        border-radius: 0.6rem;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    .mymsg {
+        background-color: transparent;
+        border: 1px solid #6CC3D5;
+        border-radius: 12px;
+        padding: 5px 10px;
+        margin: 10px 0;
+    }
+
+    .usermsg {
+        background-color: #6CC3D5;
+        color: white;
+        border-radius: 12px;
+        padding: 5px 10px;
+        margin: 10px 0;
+    }
+
+    .msg-area {
+        height: 50px
+    }
+
+    input {
+        max-width: 100% !important;
+    }
+
+    p {
+        background: #f8f8f8;
+        width: 50%;
+        height: 40px;
+        border-radius: 10px;
+        padding: 7px 20px;
+    }
+</style>
+<div class="jumbotron mt-5">
+    <h2>Messages</h2>
+    <hr />
+    <div class="row justify-content-around">
+        @* LEFT Section *@
+        <section class="col-4 border border-primary user-list">
+            <ul class="list-group mt-3 mb-4">
+                <li>
+                    <a href="#" class="list-group-item">
+                        Usman Haider Khan
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="list-group-item">
+                        Mohsin Sheikh
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="list-group-item">
+                        Hafiz B00mb
+                    </a>
+                </li>
+            </ul>
+        </section>
+        @* RIGHT Secrion *@
+        <section class="col-7 border border-primary" style="border-radius: 0.6rem;">
+            <div class="convo" id="convo">
+                <p>
+                    Hello
+                </p>
+                <p>
+                    Hi
+                </p>
+            </div>
+            <div class="msg-area border-top border-primary">
+                <div class="input-group mt-1">
+                    <input id="msg" type="text" class="form-control" placeholder="Enter Message" aria-label="Enter Message" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button id="sndmsg" class="btn btn-outline-info" type="button">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<script type="text/javascript">$(document).ready(() => {
+            debugger;
+            var rcvId = parseInt($("#otherUser").text());
+            var sndId = parseInt($("#currentUser").text());
+            var convoId = parseInt($("#convoId").text());
+            GetMessages();
+
+            var d = $('#convo');
+            d.animate({ scrollTop: d.prop('scrollHeight') }, 10);
+
+            $("#sndmsg").click(() => {
+                var msg = $("#msg").val();
+                var msgData = new Object();
+                msgData.Id = null;
+                msgData.Message = msg;
+                msgData.SenderId = sndId;
+                msgData.ReceiverId = rcvId;
+                msgData.TimeOfMsg = null;
+                var convo = new Object();
+                convo.Id = convoId;
+                msgData.Converstion = convo;
+                AddMessage(msgData);
+            });
+
+            $('#msg').keypress(function (e) {
+                var key = e.which;
+                if (key == 13)  // the enter key code
+                {
+                    var msg = $("#msg").val();
+                    var msgData = new Object();
+                    msgData.Id = null;
+                    msgData.Message = msg;
+                    msgData.SenderId = sndId;
+                    msgData.ReceiverId = rcvId;
+                    msgData.TimeOfMsg = null;
+                    var convo = new Object();
+                    convo.Id = convoId;
+                    msgData.Converstion = convo;
+                    AddMessage(msgData);
+                    return false;
+                }
+            });
+
+            setInterval(() => {
+                GetMessages();
+            }, 3000);
+
+        });</script>

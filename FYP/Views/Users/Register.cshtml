@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+<div class="container" id="register">
+    <div class="row">
+        <div class="col-md-7 mx-auto">
+            <form action="/" method="post" class="mt-120">
+                <div class="card p-5">
+                    <h2 class="text-center">FYP Registration Center</h2>
+                    <div class="form-group mt-25">
+                        <input type="number" placeholder="Register Id *" class="form-control" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email *" class="form-control" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name *" class="form-control" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password *" class="form-control" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Confirm Password *" class="form-control" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Mobile No *" class="form-control" value="" />
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option>Select Department</option>
+                            <option>Computer Science</option>
+                            <option>IT</option>
+                        </select>
+                    </div>
+                    <div class="form-group d-flex ml-4">
+                        <div>
+                            <input type="radio" class="form-check-input" name="us" value="us" id="male" />
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="ml-5">
+                            <input type="radio" class="form-check-input" name="us" value="us" id="female" />
+                            <label for="female">FeMale</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-block btn-success">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<section class="mt-70"></section>

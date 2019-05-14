@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<div class="container" id="login">
+    <div class="row ">
+        <div class="col-md-6 mx-auto mt-120">
+            <div class="card p-5">
+                <h2 class="text-center bg-transparent">FYP Management System</h2>
+                <form action="/" method="post" class="mt-35">
+                    <div class="form-group">
+                        <input type="text" class="form-control" value="" required="" placeholder="Registration Id" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" value="" required="" placeholder="Password" />
+                    </div>
+                    <div class="d-flex">
+                        <div class="form-group">
+                            <input type="checkbox" id="remeber-me" name="name" value="" />&nbsp;
+                            <label for="remeber-me">Remember me</label>
+                        </div>
+                        <div class="ml-5">
+                            <label class="ml-auto ">
+                                <a href="#" class="link-style">
+                                    Forget Password...!
+                                </a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </div>
+                </form>
+                <div class="text-center">
+                    <label style="font-weight: bold">
+                        <a href="@Url.Action("Register","Users")" class="link-style">
+                            Get Register Your Self
+                        </a>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
