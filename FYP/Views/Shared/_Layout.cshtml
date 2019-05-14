@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/assets/Bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/font/flaticon.css" rel="stylesheet" />
+    <link href="~/Content/assets/Bootstrap4/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/Bootstrap4/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="~/Content/assets/Bootstrap4/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <section id="top-nav">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <h2>LOGO</h2>
+                </div>
+                <div class="col-lg-8 ml-auto">
+                    <div class="row">
+                        <div class="offset-md-8">
+                            <div>
+                                <a href="" class="link-style">
+                                    <i class="flaticon-twitter"></i>
+                                </a>
+                                <a class="link-style" href="#">
+                                    <i class="flaticon-facebook-logo-button"></i>
+                                </a>
+                                <a class="link-style" href="#">
+                                    <i class="flaticon-facebook-logo-button"></i>
+                                </a>
+                                <a class="link-style" href="#">
+                                    <i class="flaticon-facebook-logo-button"></i>
+                                </a>
+                                <a href="" class="link-style">
+                                    <i class="flaticon-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav class="navbar navbar-expand-lg navbar-light nav-bg-color">
+        <div class="container">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mr-auto slideInLeft">
+                    <li class="nav-item nav-line active">
+                        <a class="nav-link  scroll" href="@Url.Action("Index", "Home")">What we Offer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="@Url.Action("Index", "Projects")">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="@Url.Action("Messages","Users")">Chat</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="#blog">Top Idea</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll" href="@Url.Action("Login", "Users")">Signin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        @RenderBody()
+        <div class="mt-60 p-4" style="background: #000000;">
+            <h4 class="text-center text-white">@DateTime.Now</h4>
+        </div>
+    </div>
+    <script src="~/Content/assets/Bootstrap4/js/jquery.slim.min.js"></script>
+    <script src="~/Content/assets/Bootstrap4/js/bootstrap.min.js"></script>
+    <script src="~/Content/assets/Bootstrap4/js/poper.min.js"></script>
+    <script src="~/Content/assets/Bootstrap4/js/owl.carousel.min.js"></script>
+    <script src="~/Content/assets/Bootstrap4/js/loadMoreResults.js"></script>
+    <script src="~/Content/assets/Bootstrap4/js/script.js"></script>
+</body>
+</html>
