@@ -18,5 +18,9 @@ namespace FYP.Controllers
         {
             return View();
         }
+        public ActionResult TopIdea()
+        {
+            return View();
+        }
     }
 }
