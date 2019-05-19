@@ -1,6 +1,9 @@
 ﻿console.log("usman");
 
 
+$(window).on('load', function () {
+    $('#myModal').modal('show');
+});
 
 
 
@@ -105,6 +108,32 @@ $(document).ready(function () {
 
 
 /* ==================== Js Function For the Owl Carousel Slider ================== */
+$(function () {
+    $('#owl-one').owlCarousel({
+        loop: true,
+        navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
+        margin: 20,
+        dots: false,
+        responsiveClass: true,
+        item: 3,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 2,
+                nav: true
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                loop: true
+            }
+        }
+    });
+});
+
 $(function () {
     $('.owl-carousel').owlCarousel({
         loop: true,
