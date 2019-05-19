@@ -18,6 +18,13 @@
 
 
 
+
+
+
+
+
+
+
         .white-text {
             color: #ffffff;
         }
@@ -74,7 +81,7 @@
                         <a class="nav-link scroll" href="@Url.Action("Messages","Users")">Chat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll" href="#blog">Top Idea</a>
+                        <a class="nav-link scroll" href="@Url.Action("TopIdea","Projects")">Top Idea</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link scroll" href="@Url.Action("Login", "Users")">Signin</a>
@@ -85,54 +92,90 @@
     </nav>
     <div>
         @RenderBody()
-        <!-- Footer -->
-        <footer class="page-footer font-small dark " style="background: cadetblue">
-            <!-- Footer Elements -->
-            <div class="container">
-                <!-- Grid row-->
-                <div class="row">
+        <footer class="bg-dark text-white mt-4" style="padding: 2rem 0 0 0">
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
                     <!-- Grid column -->
-                    <div class="col-md-12 py-5">
-                        <div class="mb-5 text-center">
-                            <!-- Facebook -->
-                            <a class="fb-ic">
-                                <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                            </a>
-                            <!-- Twitter -->
-                            <a class="tw-ic">
-                                <i class="fab fa-twitter fa-lg  mr-md-5 mr-3 fa-2x" style="color: #ffffff"> </i>
-                            </a>
-                            <!-- Google +-->
-                            <a class="gplus-ic">
-                                <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                            </a>
-                            <!--Linkedin -->
-                            <a class="li-ic">
-                                <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                            </a>
-                            <!--Instagram-->
-                            <a class="ins-ic">
-                                <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                            </a>
-                            <!--Pinterest-->
-                            <a class="pin-ic">
-                                <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-                            </a>
-                        </div>
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase font-weight-bold">FYP LOGO</h6>
+                        <hr class="accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background: #f8f8f8">
+                        <p>
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                            consectetur
+                            adipisicing elit.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Projects</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background: #f8f8f8">
+                        <p>
+                            <a class="text-white" href="@Url.Action("PreviousProjects","Projects")">Developing Project</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="@Url.Action("Index","Projects")">UnderDeveloping Projects</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="@Url.Action("Index","Projects")">Top Ideas</a>
+                        </p>
+                        <p>
+                            <a class="text-white" href="@Url.Action("Index","Projects")">Messages</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Follow</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background: #f8f8f8">
+                        <p>
+                            <a href="#!" class="text-white">Instagram</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Facebook</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">LinkedIn</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-white">Twitter</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;background: #f8f8f8">
+                        <p>
+                            <i class="fas fa-home mr-3 text-white"></i> University of Sargoda,Sargoda
+                        </p>
+                        <p>
+                            <i class="fas fa-envelope mr-3"></i> uos@gmail.com
+                        </p>
+                        <p>
+                            <i class="fas fa-phone mr-3"></i> +933349875662
+                        </p>
+                        <p>
+                            <i class="fas fa-print mr-3"></i> +923345678456
+                        </p>
                     </div>
                     <!-- Grid column -->
                 </div>
-                <!-- Grid row-->
+                <!-- Grid row -->
             </div>
-            <!-- Footer Elements -->
+            <!-- Footer Links -->
             <!-- Copyright -->
-            <div class="footer-copyright text-center py-3" style="background: darkcyan;color: #ffffff">
-                © 2018 Copyright:
-                <a href="@Url.Action("Index","Home")" style="color: #ffffff"> FYP Management System</a>
+            <div class="footer-copyright text-center py-3">
+                © 2019 Copyright:
+                <a href="@Url.Action("","Home")" class="text-white"> FYP Management System</a>
             </div>
             <!-- Copyright -->
         </footer>
-        <!-- Footer -->
     </div>
     <script src="~/Content/assets/Bootstrap4/js/jquery.slim.min.js"></script>
     <script src="~/Content/assets/Bootstrap4/js/bootstrap.min.js"></script>
