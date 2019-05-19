@@ -1,54 +1,83 @@
-﻿
+﻿@model FYPManagementLibrary.UsersManagement.User
 @{
     ViewBag.Title = "Register";
-}
+    Layout = null;
+}<link href="~/Content/assets/fontawesome-free-5.6.1-web/css/all.min.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/assets/font/flaticon.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/owl.theme.default.min.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/styles.css" rel="stylesheet" />
 <div class="container" id="register">
     <div class="row">
         <div class="col-md-7 mx-auto">
-            <form action="/" method="post" class="mt-120">
-                <div class="card p-5">
-                    <h2 class="text-center">FYP Registration Center</h2>
-                    <div class="form-group mt-25">
-                        <input type="number" placeholder="Register Id *" class="form-control" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Email *" class="form-control" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Full Name *" class="form-control" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password *" class="form-control" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Confirm Password *" class="form-control" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="text" placeholder="Mobile No *" class="form-control" value="" />
-                    </div>
-                    <div class="form-group">
-                        <select class="form-control">
-                            <option>Select Department</option>
-                            <option>Computer Science</option>
-                            <option>IT</option>
-                        </select>
-                    </div>
-                    <div class="form-group d-flex ml-4">
-                        <div>
-                            <input type="radio" class="form-check-input" name="us" value="us" id="male" />
-                            <label for="male">Male</label>
-                        </div>
-                        <div class="ml-5">
-                            <input type="radio" class="form-check-input" name="us" value="us" id="female" />
-                            <label for="female">FeMale</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-block btn-success">Register</button>
+            @Html.BeginForm("Register", "Users", new { c = ViewBag.Controller, a = ViewBag.Action }, FormMethod.Post, new { id = "loginform", enctype = "multipart/form-data", @class = "mt-120" })){
+
+            <div class="card p-5">
+                <h2 class="text-center">FYP Registration Center</h2>
+                <div class="form-group">
+                    <input type="file" class="form-control" name="ImageUrl" value="" />
+                </div>
+                <div class="form-group mt-25">
+                    @Html.TextBoxFor(m => m.RegisterId, "", new { @class = "form-control", placeholder = "Register Id *", type = "number" })
+                    <div class="text-center">
+                        @Html.ValidationMessageFor(m => m.RegisterId, null, new { @class = "text-danger" })
                     </div>
                 </div>
-            </form>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Email, "", new { @class = "form-control", placeholder = "Email *", type = "email" })
+                    <div class="text-center">
+                        @Html.ValidationMessageFor(m => m.Email, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.FullName, "", new { @class = "form-control", placeholder = "FullName *", type = "text" })
+                    <div class="text-center">
+                        @Html.ValidationMessageFor(m => m.FullName, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.Password, "", new { @class = "form-control", placeholder = "Password *", type = "password" })
+                    <div class="text-center">
+                        @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.ConfirmPassword, "", new { @class = "form-control", placeholder = "ConfirmPassword *", type = "password" })
+                    <div class="text-center">
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.TextBoxFor(m => m.MobileNo, "", new { @class = "form-control", placeholder = "MobileNo *", type = "number" })
+                    <div class="text-center">
+                        @Html.ValidationMessageFor(m => m.MobileNo, null, new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @*@Html.DropDownList("Department", (IEnumerable<SelectListItem>)ViewBag.department, "- Select Departments -", new { @class = "form-control" })*@
+                    @*@Html.DropDownListFor(m => m.Department, new SelectList(Model.Department.Name, "Id", "Name", "select"), new { @class = "form-control" })*@
+                </div>
+                <div class="form-group d-flex ml-4">
+                    @Html.LabelFor(m => m.Gender.Name) &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    @foreach (var b in (IEnumerable<SelectListItem>)ViewBag.GenderList)
+                    {
+                        <label>@Html.RadioButton("gender.Name", b.Value) @b.Text</label>
+                    }
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-block btn-success">Register</button>
+                </div>
+            </div>
+            }
+
         </div>
     </div>
 </div>
 <section class="mt-70"></section>
+<script src="~/Content/assets/Bootstrap4/js/jquery.slim.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/bootstrap.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/poper.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/owl.carousel.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/loadMoreResults.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/script.js"></script>

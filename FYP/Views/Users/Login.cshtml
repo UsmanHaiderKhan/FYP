@@ -1,18 +1,36 @@
-﻿
+﻿@model FYP.Models.LoginViewModel
 @{
     ViewBag.Title = "Login";
+    Layout = null;
 }
+<link href="~/Content/assets/fontawesome-free-5.6.1-web/css/all.min.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/assets/font/flaticon.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/owl.carousel.min.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/owl.theme.default.min.css" rel="stylesheet" />
+<link href="~/Content/assets/Bootstrap4/css/styles.css" rel="stylesheet" />
 <div class="container" id="login">
     <div class="row ">
         <div class="col-md-6 mx-auto mt-120">
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <p> @ViewBag.ErrorMessage</p>
+            }
             <div class="card p-5">
                 <h2 class="text-center bg-transparent">FYP Management System</h2>
-                <form action="/" method="post" class="mt-35">
+                @using (Html.BeginForm("Login", "Users", new { c = ViewBag.Controller, a = ViewBag.Action }, FormMethod.Post, new { id = "loginform" }))
+                {
                     <div class="form-group">
-                        <input type="text" class="form-control" value="" required="" placeholder="Registration Id" />
+                        @Html.TextBoxFor(m => m.RegisterId, "", new { @class = "form-control", placeholder = "RegisterId *", type = "number" })
+                        <div class="text-center">
+                            @Html.ValidationMessageFor(m => m.RegisterId, null, new { @class = "text-danger" })
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" value="" required="" placeholder="Password" />
+                        @Html.TextBoxFor(m => m.Password, "", new { @class = "form-control", placeholder = "Password *", type = "password" })
+                        <div class="text-center">
+                            @Html.ValidationMessageFor(m => m.Password, null, new { @class = "text-danger" })
+                        </div>
                     </div>
                     <div class="d-flex">
                         <div class="form-group">
@@ -30,10 +48,10 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
                     </div>
-                </form>
+                }
                 <div class="text-center">
                     <label style="font-weight: bold">
-                        <a href="@Url.Action("Register","Users")" class="link-style">
+                        <a href="@Url.Action("Register", "Users")" class="link-style">
                             Get Register Your Self
                         </a>
                     </label>
@@ -42,3 +60,9 @@
         </div>
     </div>
 </div>
+<script src="~/Content/assets/Bootstrap4/js/jquery.slim.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/bootstrap.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/poper.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/owl.carousel.min.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/loadMoreResults.js"></script>
+<script src="~/Content/assets/Bootstrap4/js/script.js"></script>

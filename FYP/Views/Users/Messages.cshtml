@@ -9,13 +9,6 @@
 
 
 
-
-
-
-
-
-
-
     .user-list {
         height: 300px;
         overflow-y: auto;
@@ -56,7 +49,7 @@
         max-width: 100% !important;
     }
 
-    p {
+    #convo p {
         background: #f8f8f8;
         width: 50%;
         height: 40px;
@@ -109,51 +102,3 @@
         </section>
     </div>
 </div>
-<script type="text/javascript">$(document).ready(() => {
-            debugger;
-            var rcvId = parseInt($("#otherUser").text());
-            var sndId = parseInt($("#currentUser").text());
-            var convoId = parseInt($("#convoId").text());
-            GetMessages();
-
-            var d = $('#convo');
-            d.animate({ scrollTop: d.prop('scrollHeight') }, 10);
-
-            $("#sndmsg").click(() => {
-                var msg = $("#msg").val();
-                var msgData = new Object();
-                msgData.Id = null;
-                msgData.Message = msg;
-                msgData.SenderId = sndId;
-                msgData.ReceiverId = rcvId;
-                msgData.TimeOfMsg = null;
-                var convo = new Object();
-                convo.Id = convoId;
-                msgData.Converstion = convo;
-                AddMessage(msgData);
-            });
-
-            $('#msg').keypress(function (e) {
-                var key = e.which;
-                if (key == 13)  // the enter key code
-                {
-                    var msg = $("#msg").val();
-                    var msgData = new Object();
-                    msgData.Id = null;
-                    msgData.Message = msg;
-                    msgData.SenderId = sndId;
-                    msgData.ReceiverId = rcvId;
-                    msgData.TimeOfMsg = null;
-                    var convo = new Object();
-                    convo.Id = convoId;
-                    msgData.Converstion = convo;
-                    AddMessage(msgData);
-                    return false;
-                }
-            });
-
-            setInterval(() => {
-                GetMessages();
-            }, 3000);
-
-        });</script>
